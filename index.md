@@ -20,6 +20,7 @@ There are also many different types of errors you can get from a program, and th
 
 My program is a simple game of guessing the lucky number. In the try section, the user is asked to pick any number. There are four ways to get an exception, an unlucky guess resulting in an index error, a type error due to an incorrect input, an out-of-range guess by guessing beyond 10, and a general exception for when the user finds a way to break the game. Due to my inexperience, I have not been able to break my own game yet, only when changing the code to fail on purpose. The try-exception portion is shown in Figure 1.
 
+![Figure 1](https://github.com/ISpentTooMuchPickingAName/IntroToProg-Python-Mod07/blob/main/Figure%201.jpg "Figure 1")
 
 Figure 1: The try-exception portion of the program
 
@@ -27,6 +28,7 @@ The pickling portion of my script is rather simple. Once the lucky guess is made
 
 We use pickling for data serialization between network applications that need to exchange data with other programs. It is useful to use when saving Python objects between sessions and processes. It is important to note, however, that it is not very secure. It may be unreadable to humans, but it can be easily decoded by a program and if used for malicious purposes if the wrong files are unpickled. The pickling portion of the program is shown in Figure 2.
 
+![Figure 2](https://github.com/ISpentTooMuchPickingAName/IntroToProg-Python-Mod07/blob/main/Figure%202.jpg "Figure 2")
 
 Figure 2: The pickling portion of the program
 
@@ -34,19 +36,25 @@ Figure 2: The pickling portion of the program
 
 The program begins with the gambler asking you to pick a number between 1 and 10. As stated above, the user will either pick the wrong number (IndexError or pick an item from a list that isn’t the lucky number), an out-of-range number (Exception), a letter (ValueError), or the correct number. Figure 3 shows the various losing options which are accessed by either raising an exception or creating an exception for a specific fault error. 
 
+![Figure 3](https://github.com/ISpentTooMuchPickingAName/IntroToProg-Python-Mod07/blob/main/Figure%203.jpg "Figure 3")
 
 Figure 3: The exceptions running when the user guesses the wrong number
 
 If the user makes the lucky guess, the SoreLoser() function is run which creates a binary file and appends a “secret” password to it. The user now has new options. If the user wants to win the gamble, they can mind tricking the gambler by running the JediMindTrick() function. The function reads the binary file to get the password and their money. The user can also choose to be noble and not trick the gambler. (Figure 4)
 
+![Figure 4](https://github.com/ISpentTooMuchPickingAName/IntroToProg-Python-Mod07/blob/main/Figure%204.jpg "Figure 4")
+
 Figure 4: The user makes the lucky guess and selecting to get the password, which runs the JediMindTrick() function to read the binary file for data
 
 However, if the user makes an incorrect selection by selecting anything that isn’t the letters ‘y’ or ‘n’, the CounterProductive() function is run, which raises a TypeError and runs that exception. In reality, it isn’t a type error since any user input will automatically be a string which is what the program expects, but this was just to demonstrate the concept of raising an exception outside the try-except portion of the script. (Figure 5)
+
+![Figure 5](https://github.com/ISpentTooMuchPickingAName/IntroToProg-Python-Mod07/blob/main/Figure%205.jpg "Figure 5")
 
 Figure 5: The user makes a mistake, which runs the CounterProductive() 
 
 Because the pickle module is imported, the name must be included before the load and dump functions so that the program works, otherwise, you would actually “break” the game. (Figure 6)
 
+![Figure 6](https://github.com/ISpentTooMuchPickingAName/IntroToProg-Python-Mod07/blob/main/Figure%206.jpg "Figure 6")
 
 Figure 6: Breaking the game is much easier when the code isn’t correct
 
